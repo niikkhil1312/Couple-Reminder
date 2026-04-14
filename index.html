@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Couple Connect & Reminder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>💌 Couple Connect</h1>
+      <p>Share quick notes and reminders with your partner.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Set Partner Reminder</h2>
+        <form id="reminder-form">
+          <label>
+            Reminder for
+            <input type="text" id="forPerson" placeholder="e.g. Alex" required />
+          </label>
+          <label>
+            Message
+            <textarea id="reminderText" placeholder="Don’t forget our date at 7 PM 💖" required></textarea>
+          </label>
+          <label>
+            Date & time
+            <input type="datetime-local" id="reminderTime" required />
+          </label>
+          <button type="submit">Add Reminder</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>Send Shared Note</h2>
+        <form id="note-form">
+          <label>
+            Note title
+            <input type="text" id="noteTitle" placeholder="Grocery list" required />
+          </label>
+          <label>
+            Your note
+            <textarea id="noteBody" placeholder="Milk, bread, flowers 🌸" required></textarea>
+          </label>
+          <button type="submit">Save Note</button>
+        </form>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Upcoming Reminders</h2>
+        <ul id="reminder-list" class="item-list"></ul>
+      </article>
+
+      <article class="card">
+        <h2>Shared Notes</h2>
+        <ul id="note-list" class="item-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <template id="item-template">
+    <li class="item">
+      <div class="item-content"></div>
+      <button class="danger" type="button">Delete</button>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
